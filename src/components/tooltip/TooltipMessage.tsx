@@ -29,6 +29,7 @@ const MessageWrapper = styled.div`
   padding: 15px;
   width: 280px;
   box-sizing: border-box;
+  word-break: break-word;
 `;
 
 export function TooltipMessage({
@@ -36,7 +37,7 @@ export function TooltipMessage({
   desc,
   links,
   ...rest
-}: Props & ComponentProps<typeof MessageWrapper> & { children?: never }) {
+}: Props & ComponentProps<typeof MessageWrapper>) {
   return (
     <MessageWrapper {...rest}>
       <Message>

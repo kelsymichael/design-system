@@ -1,7 +1,6 @@
 import React, {
   ComponentProps,
   ComponentType,
-  FC,
   forwardRef,
   MutableRefObject,
   ReactNode,
@@ -12,26 +11,27 @@ import React, {
 import { styled, css } from '@storybook/theming';
 import { color, typography } from './shared/styles';
 
-const Label = styled.label<{ hideLabel: boolean }>`
-  ${(props) =>
-    props.hideLabel &&
-    css`
-      border: 0px !important;
-      clip: rect(0 0 0 0) !important;
-      -webkit-clip-path: inset(100%) !important;
-      clip-path: inset(100%) !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      padding: 0px !important;
-      position: absolute !important;
-      white-space: nowrap !important;
-      width: 1px !important;
-    `}
+const hidden = () => css`
+  border: 0px !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(100%) !important;
+  clip-path: inset(100%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0px !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
 `;
 
-const ErrorMessage = styled.span`
+const Label = styled.label<{ hideLabel: boolean }>`
+  ${(props) => props.hideLabel && hidden()}
+`;
+
+const ErrorMessage = styled.span<{ hideError: boolean }>`
   color: ${color.negative};
   font-weight: ${typography.weight.regular};
+  ${(props) => props.hideError && hidden()}
 `;
 
 const LabelWrapper = styled.div<{ hideLabel: boolean; error: ReactNode }>`
@@ -114,7 +114,7 @@ const TextareaWrapper = styled.div<{ error: ReactNode }>`
     `};
 `;
 
-const TextareaContainer = styled.div<{ orientation: Props['orientation'] }>`
+const TextareaContainer = styled.div<{ orientation: TextareaProps['orientation'] }>`
   ${(props) =>
     props.orientation === 'horizontal' &&
     css`
@@ -138,12 +138,13 @@ const TextareaContainer = styled.div<{ orientation: Props['orientation'] }>`
 const getErrorMessage = ({ error, value }: any): ReactNode =>
   typeof error === 'function' ? error(value) : error;
 
-interface Props {
+interface TextareaProps {
   id: string;
   value: string;
   label: string;
   appearance?: 'default';
   hideLabel?: boolean;
+  hideError?: boolean;
   orientation?: 'vertical' | 'horizontal';
   error?: ReactNode | ComponentType;
   startFocused?: boolean;
@@ -152,7 +153,10 @@ interface Props {
   subtextSentiment?: 'default' | 'negative' | 'warning';
 }
 
-export const Textarea: FC<Props & ComponentProps<typeof TextareaText>> = forwardRef(
+export const Textarea = forwardRef<
+  HTMLTextAreaElement,
+  TextareaProps & ComponentProps<typeof TextareaText>
+>(
   (
     {
       id,
@@ -160,6 +164,7 @@ export const Textarea: FC<Props & ComponentProps<typeof TextareaText>> = forward
       label,
       hideLabel = false,
       error = null,
+      hideError = false,
       subtext,
       subtextSentiment,
       appearance = 'default',
@@ -181,7 +186,7 @@ export const Textarea: FC<Props & ComponentProps<typeof TextareaText>> = forward
         textareaRef.current.focus();
         didFocusOnStart.current = true;
       }
-    }, [textareaRef, textareaRef.current, didFocusOnStart, didFocusOnStart.current]);
+    }, [textareaRef, startFocused]);
 
     const [errorMessage, setErrorMessage] = useState(getErrorMessage({ error, value }));
 
@@ -200,7 +205,7 @@ export const Textarea: FC<Props & ComponentProps<typeof TextareaText>> = forward
             {label}
           </Label>
           {errorMessage && (
-            <ErrorMessage id={errorId} aria-hidden>
+            <ErrorMessage hideError={hideError} id={errorId} aria-hidden>
               {errorMessage}
             </ErrorMessage>
           )}
@@ -221,3 +226,4 @@ export const Textarea: FC<Props & ComponentProps<typeof TextareaText>> = forward
     );
   }
 );
+Textarea.displayName = 'Textarea';

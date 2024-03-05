@@ -1,3 +1,248 @@
+# v7.15.17 (Tue Jan 02 2024)
+
+#### 🐛 Bug Fix
+
+- add font family css variable support [#433](https://github.com/storybookjs/design-system/pull/433) ([@JonathanKolnik](https://github.com/JonathanKolnik))
+
+#### Authors: 1
+
+- Jono Kolnik ([@JonathanKolnik](https://github.com/JonathanKolnik))
+
+---
+
+# v7.15.16 (Fri Dec 22 2023)
+
+#### 🐛 Bug Fix
+
+- Bump storybook version [#432](https://github.com/storybookjs/design-system/pull/432) ([@JonathanKolnik](https://github.com/JonathanKolnik))
+
+#### Authors: 1
+
+- Jono Kolnik ([@JonathanKolnik](https://github.com/JonathanKolnik))
+
+---
+
+# v7.15.15 (Thu Aug 03 2023)
+
+#### 🐛 Bug Fix
+
+- Add chevron to ButtonAction [#425](https://github.com/storybookjs/design-system/pull/425) ([@MichaelArestad](https://github.com/MichaelArestad))
+
+#### Authors: 1
+
+- Michael Arestad ([@MichaelArestad](https://github.com/MichaelArestad))
+
+---
+
+# v7.15.14 (Thu Aug 03 2023)
+
+#### 🐛 Bug Fix
+
+- Added diamond icon [#424](https://github.com/storybookjs/design-system/pull/424) ([@MichaelArestad](https://github.com/MichaelArestad))
+
+#### Authors: 1
+
+- Michael Arestad ([@MichaelArestad](https://github.com/MichaelArestad))
+
+---
+
+# v7.15.13 (Thu Jul 13 2023)
+
+#### 🐛 Bug Fix
+
+- Override WithTooltips default role of 'button' [#422](https://github.com/storybookjs/design-system/pull/422) ([@andrewortwein](https://github.com/andrewortwein))
+
+#### Authors: 1
+
+- Andrew Ortwein ([@andrewortwein](https://github.com/andrewortwein))
+
+---
+
+# v7.15.12 (Mon Jun 19 2023)
+
+#### 🐛 Bug Fix
+
+- Update Tooltips to use Word Break on long words [#420](https://github.com/storybookjs/design-system/pull/420) ([@thafryer](https://github.com/thafryer))
+
+#### Authors: 1
+
+- Jarel Fryer ([@thafryer](https://github.com/thafryer))
+
+---
+
+# v7.15.11 (Thu Jun 01 2023)
+
+#### 🐛 Bug Fix
+
+- export StyledLinkProps to allow Link to be extended [#419](https://github.com/storybookjs/design-system/pull/419) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
+# v7.15.10 (Fri May 12 2023)
+
+#### 🐛 Bug Fix
+
+- Adds `countColor` prop to Cardinal [#418](https://github.com/storybookjs/design-system/pull/418) ([@elseloop](https://github.com/elseloop))
+
+#### Authors: 1
+
+- Dan Manchester ([@elseloop](https://github.com/elseloop))
+
+---
+
+# v7.15.9 (Fri Apr 07 2023)
+
+#### 🐛 Bug Fix
+
+- Upgrade Storybook and Emotion dependencies [#417](https://github.com/storybookjs/design-system/pull/417) ([@ghengeveld](https://github.com/ghengeveld))
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.8 (Mon Apr 03 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Allow hiding error message on Textarea ([@ghengeveld](https://github.com/ghengeveld))
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.7 (Fri Mar 24 2023)
+
+#### 🐛 Bug Fix
+
+- ButtonAction updates [#414](https://github.com/storybookjs/design-system/pull/414) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
+# v7.15.6 (Fri Mar 24 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Prevent duplicate export of 'Link' ([@ghengeveld](https://github.com/ghengeveld))
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.1 (Fri Mar 24 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Avoid React.FC, improve types and fix lint errors ([@ghengeveld](https://github.com/ghengeveld))
+- Use latest Storybook 7 RC ([@ghengeveld](https://github.com/ghengeveld))
+- Fix types for optional fields on ProgressDots ([@ghengeveld](https://github.com/ghengeveld))
+- Include spreaded rest props in type definition ([@ghengeveld](https://github.com/ghengeveld))
+- Change tooltip wrapper element to span to prevent nesting buttons ([@ghengeveld](https://github.com/ghengeveld))
+- Use human readable numbers in Cardinal ([@ghengeveld](https://github.com/ghengeveld))
+- Export ButtonAction component ([@ghengeveld](https://github.com/ghengeveld))
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.1 (Thu Mar 23 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Fix types for optional fields on ProgressDots (info@ghengeveld.nl)
+- Include spreaded rest props in type definition (info@ghengeveld.nl)
+- Change tooltip wrapper element to span to prevent nesting buttons (info@ghengeveld.nl)
+- Use human readable numbers in Cardinal (info@ghengeveld.nl)
+- Export ButtonAction component (info@ghengeveld.nl)
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.1 (Tue Mar 21 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Include spreaded rest props in type definition (info@ghengeveld.nl)
+- Change tooltip wrapper element to span to prevent nesting buttons (info@ghengeveld.nl)
+- Use human readable numbers in Cardinal (info@ghengeveld.nl)
+- Export ButtonAction component (info@ghengeveld.nl)
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.1 (Tue Mar 21 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Change tooltip wrapper element to span to prevent nesting buttons (info@ghengeveld.nl)
+- Use human readable numbers in Cardinal (info@ghengeveld.nl)
+- Export ButtonAction component (info@ghengeveld.nl)
+
+#### Authors: 1
+
+- Gert Hengeveld ([@ghengeveld](https://github.com/ghengeveld))
+
+---
+
+# v7.15.1 (Tue Mar 21 2023)
+
+#### ⚠️ Pushed to `master`
+
+- Use human readable numbers in Cardinal (info@ghengeveld.nl)
+- Export ButtonAction component (info@ghengeveld.nl)
+
+#### Authors: 1
+
+- Gert Hengeveld (info@ghengeveld.nl)
+
+---
+
+# v7.15.0 (Thu Mar 16 2023)
+
+#### 🚀 Enhancement
+
+- Create new ButtonAction component [#412](https://github.com/storybookjs/design-system/pull/412) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
+# v7.14.0 (Mon Mar 13 2023)
+
+#### 🚀 Enhancement
+
+- Upgrade to Storybook 7 [#410](https://github.com/storybookjs/design-system/pull/410) ([@yannbf](https://github.com/yannbf) [@shilman](https://github.com/shilman))
+
+#### Authors: 2
+
+- Michael Shilman ([@shilman](https://github.com/shilman))
+- Yann Braga ([@yannbf](https://github.com/yannbf))
+
+---
+
 # v7.13.2 (Thu Mar 09 2023)
 
 #### 🐛 Bug Fix

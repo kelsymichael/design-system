@@ -1,8 +1,9 @@
-import React, { ComponentProps, FC } from 'react';
+import React, { ComponentProps } from 'react';
 import { styled, css } from '@storybook/theming';
+import type { StyledComponent } from '@storybook/theming';
 
 import { Link } from './Link';
-import { breakpoint, color, typography } from './shared/styles';
+import { color, typography } from './shared/styles';
 import { inlineGlow } from './shared/animation';
 
 const Wrapper = styled.ul`
@@ -18,7 +19,12 @@ const Wrapper = styled.ul`
   }
 `;
 
-const Tab = styled(Link)<{ isLoading?: boolean; isActive?: boolean }>`
+interface TabProps {
+  isLoading?: boolean;
+  isActive?: boolean;
+}
+
+const Tab: StyledComponent<TabProps> = styled(Link)<TabProps>`
   padding: 10px 15px;
   line-height: 20px;
   font-size: ${typography.size.s2}px;
@@ -53,16 +59,16 @@ type ItemProps = {
   label: string;
 } & ComponentProps<typeof Tab>;
 
-interface Props {
+interface LinkTabsProps {
   isLoading?: boolean;
   items: ItemProps[];
 }
 
-export const LinkTabs: FC<Props & ComponentProps<typeof Wrapper>> = ({
+export const LinkTabs = ({
   isLoading = false,
   items = [],
   ...props
-}) => (
+}: LinkTabsProps & ComponentProps<typeof Wrapper>) => (
   <Wrapper {...props}>
     {items.map(({ key, label, ...item }) => (
       <li key={key}>
